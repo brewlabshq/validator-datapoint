@@ -29,6 +29,7 @@ fn main() -> Result<(), Error> {
     for line in reader.lines() {
         let line = line.unwrap();
         if let Some(dp_name) = extract_datapoint_name(&line) {
+            println!("Found Datapoint: {:?}", dp_name);
             unique_datapoints.insert(dp_name.to_string());
         }
     }
